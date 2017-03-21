@@ -11,7 +11,6 @@
  *
  * @author j.czoske
  */
-include_once realpath(dirname(__file__) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..') . DIRECTORY_SEPARATOR . 'dbinc' . DIRECTORY_SEPARATOR . 'db_config.php';
 
 abstract class pdo_class {
 
@@ -35,7 +34,7 @@ abstract class pdo_class {
                 static::$pdo = new PDO(static::$server, static::$data_user, static::$data_pass, $options);
             } catch (PDOException $e) {
                 static::$PDOException = $e;
-                die('PDO_CLASS::CONNECT(): Datenbank ' . static::$database . ' zur zeit nicht erreichbar! Bitte Verständigen sie ihren Datenbankadministrator.');
+                die('PDO_CLASS::CONNECT(): Datenbank ' . static::$database . ' zur zeit nicht erreichbar! Bitte Verstï¿½ndigen sie ihren Datenbankadministrator.');
                 return false;
             }
             static::$pdo->setAttribute(PDO::ATTR_ERRMODE, static::$err_mode);
