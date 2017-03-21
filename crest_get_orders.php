@@ -11,6 +11,11 @@ $region_ids[] = '10000013'; #malpais
 foreach ($region_ids as $region_id) {
     $url = 'https://crest-tq.eveonline.com/market/' . $region_id . '/orders/all/';
     get_market_by_url($url);
+    
+    #$url = 'https://crest-tq.eveonline.com/market/10000069/orders/buy/?type=https://crest-tq.eveonline.com/inventory/types/23911/';
+    #get_market_by_url($url);
+    
+    
 }
 
 function get_market_by_url($url) {
@@ -18,7 +23,8 @@ function get_market_by_url($url) {
     $jsonarray = json_decode($jsonfile);
 
     echo '<pre>';
-    #print_r($jsonarray);
+    print_r($jsonarray);
+    die();
     foreach ($jsonarray->items as $key => $value) {
         #print_r($value);
         $sql = "INSERT INTO `eve`.`tbl_order` (`id`, `buy`, `issued`, `price`, `volume`, `duration`, `min_volume`, `range`, `station_id`, `type`) VALUES"

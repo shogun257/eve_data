@@ -20,7 +20,7 @@ function get_station_by_url($url) {
     print_r($jsonarray);
 
     $sql = "INSERT INTO `eve`.`tbl_stations` (`id`, `system_name`, `type_id`, `name`) VALUES "
-            . "('" . $station_id . "', '" . $jsonarray->system->name . "', '" . get_item_by_url($jsonarray->type->href) . "', '" . $jsonarray->name . "')";
+            . "('" . $station_id[0] . "', '" . $jsonarray->system->name . "', '" . get_item_by_url($jsonarray->type->href) . "', '" . $jsonarray->name . "')";
     echo "<br>" . $sql . "<br>";
-    #pdo_eve::mysql_query($sql);
+    pdo_eve::mysql_query($sql);
 }
