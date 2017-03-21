@@ -10,7 +10,7 @@ require_once 'func/func_crest_items.php';
 $region_ids[] = '10000013'; #malpais
 foreach ($region_ids as $region_id) {
     $url = 'https://crest-tq.eveonline.com/market/' . $region_id . '/orders/all/';
-    get_market_by_url($url);
+    get_market_by_url($url); 
     
     #$url = 'https://crest-tq.eveonline.com/market/10000069/orders/buy/?type=https://crest-tq.eveonline.com/inventory/types/23911/';
     #get_market_by_url($url);
