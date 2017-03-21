@@ -6,7 +6,7 @@ require_once 'func/func_crest_stations.php';
 require_once 'func/func_crest_items.php';
 
 
-#$region_ids[] = '10000002'; #The Forge
+$region_ids[] = '10000002'; #The Forge
 $region_ids[] = '10000013'; #malpais
 foreach ($region_ids as $region_id) {
     $url = 'https://crest-tq.eveonline.com/market/' . $region_id . '/orders/all/';
@@ -23,8 +23,8 @@ function get_market_by_url($url) {
     $jsonarray = json_decode($jsonfile);
 
     echo '<pre>';
-    print_r($jsonarray);
-    die();
+    print_r($jsonarray->totalCount);
+    #die();
     foreach ($jsonarray->items as $key => $value) {
         #print_r($value);
         $sql = "INSERT INTO `eve`.`tbl_order` (`id`, `buy`, `issued`, `price`, `volume`, `duration`, `min_volume`, `range`, `station_id`, `type`) VALUES"
