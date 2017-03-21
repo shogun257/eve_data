@@ -2,6 +2,8 @@
 ini_set("max_execution_time", "180");
 #10000002
 require_once 'classes/db_classes/pdo_eve.php';
+require_once 'func/func_crest_stations.php';
+require_once 'func/func_crest_items.php';
 
 
 #$region_ids[] = '10000002'; #The Forge
