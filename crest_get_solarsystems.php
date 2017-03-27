@@ -6,5 +6,5 @@ require_once 'classes/db_classes/pdo_eve.php';
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-get_solarsystems();
+get_solarsystems_all();
 
