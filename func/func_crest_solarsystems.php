@@ -6,7 +6,7 @@ require_once 'classes/db_classes/pdo_eve.php';
  * and open the template in the editor.
  */
 
-function get_solarsystems() {
+function get_solarsystems_all() {
     $url = 'https://crest-tq.eveonline.com/solarsystems/';
     $jsonfile = file_get_contents($url);
     $jsonarray = json_decode($jsonfile);
